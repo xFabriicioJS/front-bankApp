@@ -15,7 +15,7 @@ const AccountsTable = ({ accounts, columns }) => {
         {accounts.map((account, index) => (
           <tr
             key={index}
-            className="transition duration-300 ease-in-out hover:bg-bgTertiary cursor-pointer rounded-2xl"
+            className="transition duration-300 ease-in-out hover:bg-bgTertiary cursor-pointer rounded-2xl last:rounded-2xl"
           >
             <td className="p-4 text-center">{account.id}</td>
             <td className="p-4 text-center">{account.nome}</td>

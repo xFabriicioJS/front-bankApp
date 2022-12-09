@@ -1,15 +1,18 @@
-import NavBar from "../components/NavBar";
-import AccountsTable from "../components/AccountsTable";
-import dummyData from "../dummy_data";
-
-const columns = ["ID", "Nome", "CPF"];
-
+// import AccountsTable from "../components/AccountsTable";
+// import dummyData from "../dummy_data";
+import TransactionsTable from "../components/TransactionsTable";
+import dummyDataTransactions from "../../dummy_dataTransactions";
+// const columns = ["ID", "Nome", "CPF"];
+const columns = ["ID", "Tipo", "Valor", "Conta"];
 const HomePage = () => {
   return (
-    <div className="bg-bgSecondary h-screen">
-      <NavBar />
-      <AccountsTable accounts={dummyData} columns={columns} />
-    </div>
+    <>
+      {/* <AccountsTable accounts={dummyData} columns={columns} /> */}
+      <TransactionsTable
+        transactions={dummyDataTransactions}
+        columns={columns}
+      />
+    </>
   );
 };
 
