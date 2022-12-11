@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL_API = import.meta.env.VITE_BACKEND_URL + "accounts";
+const URL_API = import.meta.env.VITE_URL_API + "accounts";
 
 //Requisiçao para adicionar conta
 const addAccount = async (account) => {

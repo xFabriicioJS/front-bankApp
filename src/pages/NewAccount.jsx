@@ -60,7 +60,6 @@ export const NewAccount = () => {
               }
             },
             (err) => {
-              console.log(err.response.data);
               if (err.response.data.match("CPF informado")) {
                 toast.warning("Esse CPF já foi cadastrado!");
               } else {

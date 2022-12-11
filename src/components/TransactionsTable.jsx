@@ -5,7 +5,6 @@ import TransactionService from "../services/TransactionService";
 const TransactionsTable = () => {
   const [transactions, setTransactions] = useState([]);
   useEffect(() => {
-    console.log("teste");
     TransactionService.findAll().then((response) => {
       setTransactions(response.data);
     });

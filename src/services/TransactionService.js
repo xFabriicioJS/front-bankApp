@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL_API = import.meta.env.VITE_BACKEND_URL + "transactions";
+const URL_API = import.meta.env.VITE_URL_API + "transactions";
 
 //Requisiçao para adicionar transação
 const addTransaction = async (transaction, transactionType) => {
