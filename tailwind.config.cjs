@@ -12,7 +12,7 @@ module.exports = {
       primary: "#631A86",
       success: "#04B894",
       warning: "#F4E4BA",
-      danger: "#D37D7D",
+      danger: "#D16464",
       bgPrimary: "#0E1C36",
       bgTertiary: "#1E3A6E",
       "bubble-gum": "#ff77e9",

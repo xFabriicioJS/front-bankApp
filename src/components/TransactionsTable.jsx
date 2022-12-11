@@ -1,6 +1,17 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import TransactionService from "../services/TransactionService";
 
-const TransactionsTable = ({ transactions, columns }) => {
+const TransactionsTable = () => {
+  const [transactions, setTransactions] = useState([]);
+  useEffect(() => {
+    console.log("teste");
+    TransactionService.findAll().then((response) => {
+      setTransactions(response.data);
+    });
+  }, []);
+
+  const columns = ["ID", "Tipo", "Valor", "Conta"];
   let navigate = useNavigate();
 
   return (
@@ -19,10 +30,7 @@ const TransactionsTable = ({ transactions, columns }) => {
         {transactions.map((transaction, index) => (
           <tr
             key={index}
-            className="transition duration-300 ease-in-out hover:bg-bgTertiary cursor-pointer rounded-2xl"
-            onClick={() => {
-              navigate(`/transactions/${transaction.id}`);
-            }}
+            className="transition duration-300 ease-in-out hover:bg-bgTertiary  rounded-2xl"
           >
             <td className="p-4 text-center">{transaction.id}</td>
             <td className="p-4 text-center">
@@ -32,8 +40,10 @@ const TransactionsTable = ({ transactions, columns }) => {
                 <p className="text-success font-bold">Transferência</p>
               )}
             </td>
-            <td className="p-4 text-center">R$ {transaction.amount}</td>
-            <td className="p-4 text-center">{transaction.accountId}</td>
+            <td className="p-4 text-center">
+              R$ {transaction.amount?.toFixed(2).replace(".", ",")}{" "}
+            </td>
+            <td className="p-4 text-center">{transaction.idAccount}</td>
             <td className="p-4 text-center">
               <button
                 className="bg-bermuda rounded-2xl text-white py-2 transition duration-500 hover:scale-110 w-28 mx-5"

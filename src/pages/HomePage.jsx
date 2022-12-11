@@ -1,17 +1,15 @@
-// import AccountsTable from "../components/AccountsTable";
-// import dummyData from "../dummy_data";
+import AccountsTable from "../components/AccountsTable";
 import TransactionsTable from "../components/TransactionsTable";
-import dummyDataTransactions from "../../dummy_dataTransactions";
-// const columns = ["ID", "Nome", "CPF"];
-const columns = ["ID", "Tipo", "Valor", "Conta"];
+import { useContext } from "react";
+import { newContext } from "../context";
+import NavBar from "../components/NavBar";
+
 const HomePage = () => {
+  const { state } = useContext(newContext);
   return (
     <>
-      {/* <AccountsTable accounts={dummyData} columns={columns} /> */}
-      <TransactionsTable
-        transactions={dummyDataTransactions}
-        columns={columns}
-      />
+      <NavBar />
+      {state === "accounts" ? <AccountsTable /> : <TransactionsTable />}
     </>
   );
 };

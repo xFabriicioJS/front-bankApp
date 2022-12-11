@@ -1,10 +1,14 @@
+import React, { useRef } from "react";
+
 const FormInputRead = (props) => {
+  const inputRef = useRef();
   return (
     <>
       <label className="form-label inline-block mb-2 text-gray-700 ml-2 mt-4">
         {props.title}
       </label>
       <input
+        readOnly
         type="text"
         className="
         form-control
@@ -18,8 +22,8 @@ const FormInputRead = (props) => {
         bg-bgInput
         cursor-not-allowed
       "
-        value={props.value}
-        aria-label="readonly input example"
+        ref={inputRef}
+        value={props.value || ""}
       />
     </>
   );
