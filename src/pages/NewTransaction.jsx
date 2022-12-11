@@ -32,7 +32,6 @@ export const NewTransaction = () => {
   }, []);
 
   const checkType = (e) => {
-    console.log("chamou!");
     if (e.target.value === "transfer") {
       transactionComponent.current.style.display = "block";
       setTransactionType("transfer");
@@ -72,8 +71,6 @@ export const NewTransaction = () => {
             idAccount: params.id,
             idAccountTarget: values.targetAccount,
           };
-          console.log(transactionType);
-          console.log(requestBody);
           TransactionService.addTransaction(requestBody, transactionType).then(
             (response) => {
               if (response.status === 201) {
@@ -90,7 +87,6 @@ export const NewTransaction = () => {
               }
             },
             (err) => {
-              console.log(err.response.data);
               toast.warning(err.response.data);
             }
           );
