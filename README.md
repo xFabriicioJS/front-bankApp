@@ -1,6 +1,6 @@
-# Título do projeto
+# bankApp - Frontend com React.JS
 
-bankApp - Frontend com React.JS
+Uma aplicação feita com React.JS com estilização feita com TailwindCSS. Deve permitir a criação de contas, e transações envolvendo depósitos e transferências entre essas contas.
 
 ## 🚀 Começando
 
@@ -18,7 +18,7 @@ Node.JS
 
 ### 🔧 Instalação
 
-Faça o clone desse reposit´ório com o seguinte comando:
+Faça o clone desse repositório com o seguinte comando:
 
 ```
 git clone https://github.com/xFabriicioJS/front-bankApp.git
@@ -43,6 +43,7 @@ npm run dev
 ```
 
 Agora, crie um arquivo ".env" para configurar suas variáveis de ambiente para coincidir com a URL da API do backend. Como no exemplo abaixo:
+*Lembre-se: Para sua variável de ambiente funcionar, ela deve começar com "VITE_", uma obrigação do webpack Vite.
 
 ```
 VITE_URL_API=http://localhost:3000/
@@ -63,5 +64,6 @@ npm run dev
 - [React Icons](https://react-icons.github.io/react-icons/) - Biblioteca para utilização de ícones
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction) - Biblioteca para utilização de notificações
 - [Formik](https://formik.org/docs/overview) - Biblioteca para utilização de formulários
+- [Vite](https://formik.org/docs/overview) - O Webpack React mais famoso atualmente, e um dos mais rápidos também.
 
 ⌨️ com ❤️ por [Fabricio Monteiro](https://github.com/xFabriicioJS) 😊
