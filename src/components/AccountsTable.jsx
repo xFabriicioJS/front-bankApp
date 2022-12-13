@@ -61,7 +61,7 @@ const AccountsTable = () => {
     </table>
   ) : (
     <div className="flex items-center  p-20 flex-col">
-      <h1 className="text-2xl">Nenhuma conta foi criada ainda.</h1>
+      <h1 className="text-2xl text-white">Nenhuma conta foi criada ainda.</h1>
       <button
         className="bg-success rounded-2xl mt-4 text-white py-2 transition duration-500 hover:scale-110 w-36"
         onClick={() => navigate("/new-account/")}
