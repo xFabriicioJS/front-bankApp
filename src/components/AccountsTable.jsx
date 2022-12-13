@@ -3,14 +3,16 @@ import { useNavigate } from "react-router-dom";
 import AccountService from "../services/AccountService";
 
 const AccountsTable = () => {
-  const [accounts, setAccounts] = useState();
+  const [accounts, setAccounts] = useState([]);
   const columns = ["ID", "Nome", "CPF"];
   useEffect(() => {
-    AccountService.findAll().then((response) => setAccounts(response.data));
+    AccountService.findAll().then((response) => {
+      setAccounts(response.data);
+    });
   }, []);
 
   const navigate = useNavigate();
-  return (
+  return accounts.length > 0 ? (
     <table className="w-3/4 shaEdow-md rounded-2xl bg-bgPrimary text-white mx-auto mt-8">
       <thead>
         <tr>
@@ -57,6 +59,16 @@ const AccountsTable = () => {
         ))}
       </tbody>
     </table>
+  ) : (
+    <div className="flex items-center  p-20 flex-col">
+      <h1 className="text-2xl">Nenhuma conta foi criada ainda.</h1>
+      <button
+        className="bg-success rounded-2xl mt-4 text-white py-2 transition duration-500 hover:scale-110 w-36"
+        onClick={() => navigate("/new-account/")}
+      >
+        <p className="font-bold">Criar nova conta</p>
+      </button>
+    </div>
   );
 };
 

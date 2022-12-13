@@ -58,7 +58,7 @@ export const NewTransaction = () => {
       <Formik
         innerRef={ref}
         initialValues={{
-          amount: 500,
+          amount: 0.0,
           transactionType: undefined,
           accountID: params.id,
           targetAccount: 0,
@@ -71,6 +71,7 @@ export const NewTransaction = () => {
             idAccount: params.id,
             idAccountTarget: values.targetAccount,
           };
+          console.log(requestBody);
           TransactionService.addTransaction(requestBody, transactionType).then(
             (response) => {
               if (response.status === 201) {
@@ -155,6 +156,7 @@ export const NewTransaction = () => {
             bg-bgInput"
                 as="select"
               >
+                <option value="0">Selecione a conta de destino</option>
                 {accounts.map((account, index) => (
                   <option key={index} value={account.id || ""}>
                     {account.name || ""}
